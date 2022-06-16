@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome traveler</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Flex' rel='stylesheet'>
+    <style media="screen">
+
+      body {
+        font-family: 'Roboto Flex';
+        color: white;
+        /* font-size: 50px; */
+
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	      background-size: 400% 400%;
+       	animation: gradient 15s ease infinite;
+       	height: 100vh;
+      }
+
+      @keyframes gradient {
+
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+
+      }
+
+      #time {
+
+        font-size: 200px;
+        position: fixed;
+        margin: 0 auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+      }
+
+      #date {
+
+        position: relative;
+        color: white;
+
+      }
+
+      #clock {
+
+      position: relative;
+      color: white;
+
+    }
+
+    </style>
+  </head>
+  <body style="background-color: #202124">
+    <div id="time">
+      <div id="date"></div>
+      <div id="clock"></div>
+    </div>
+    <script>
+
+      //console.log(new Date().toLocaleString(undefined, { month: "numeric", day: "numeric" }));
+       document.getElementById("date").innerHTML = new Date().toLocaleString(undefined, { month: "numeric", day: "numeric" });
+
+      setInterval(function() {
+
+        //console.log(new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric", second: "numeric" }));
+        document.getElementById("clock").innerHTML = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric", second: "numeric" });
+
+      }, 100);
+    </script>
+  </body>
+</html>
